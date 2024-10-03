@@ -30,6 +30,7 @@ function ProductCard() {
               <Card.Text style={{ maxHeight: "78px", overflow: "hidden" }}>
                 {product.description}
               </Card.Text>
+              <Button className="m-2" variant="primary">View Product</Button>
               <Button variant="primary">Add to cart</Button>
             </Card.Body>
           </Card>

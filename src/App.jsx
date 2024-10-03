@@ -6,7 +6,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Footer from "./components/Footer/Footer";
 
-
 function App() {
   return (
     <>
@@ -20,14 +19,12 @@ function App() {
         <section>
           <Container>
             <Row>
-              
-                <ProductCard />
-             
+              <ProductCard />
             </Row>
           </Container>
         </section>
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }
