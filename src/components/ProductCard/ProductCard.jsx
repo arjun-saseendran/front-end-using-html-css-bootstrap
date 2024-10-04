@@ -3,8 +3,10 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import axios from "axios";
 import Col from "react-bootstrap/Col";
-import { useDispatch } from "react-redux";
 import { add } from "../../features/cart/cartSlice";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { viewProduct } from "../../features/cart/cartSlice";
 
 function ProductCard() {
   const dispatch = useDispatch();
@@ -13,7 +15,7 @@ function ProductCard() {
   useEffect(() => {
     axios
       .get("https://fakestoreapi.com/products")
-      .then((resoponse) => setProducts(resoponse.data))
+      .then((response) => setProducts(response.data))
       .catch((error) => console.log(error));
   }, []);
 
@@ -34,9 +36,17 @@ function ProductCard() {
               <Card.Text style={{ maxHeight: "78px", overflow: "hidden" }}>
                 {product.description}
               </Card.Text>
-              <Button className="m-2" variant="dark">
-                View Product
-              </Button>
+
+              <Link to={`/view-product/${product.id}`}>
+                <Button
+                  onClick={() => dispatch(viewProduct(product))}
+                  className="m-2"
+                  variant="dark"
+                >
+                  View Product
+                </Button>
+              </Link>
+
               <Button variant="dark" onClick={() => dispatch(add(product))}>
                 Add to cart
               </Button>

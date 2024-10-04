@@ -4,14 +4,10 @@ import Banner from "./components/Banner/Banner";
 import ProductCard from "./components/ProductCard/ProductCard";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <>
-      <header>
-        <Header />
-      </header>
       <main>
         <section>
           <Banner />
@@ -24,7 +20,6 @@ function App() {
           </Container>
         </section>
       </main>
-      <Footer />
     </>
   );
 }
