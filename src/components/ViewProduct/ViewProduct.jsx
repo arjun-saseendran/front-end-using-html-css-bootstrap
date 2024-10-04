@@ -16,8 +16,9 @@ function ViewProduct() {
 
   return (
     <Container>
-      <Row>
-        <Card className="h-50 w-50 m-5 flex justify-content-center align-items-center">
+      <h1 className="text-center text-white m-5">Product Details</h1>
+      <Row className="flex justify-content-center align-items-center mt-5">
+        <Card className="h-50 w-50 m-5 ">
           <Card.Img variant="top" src={image} />
           <Card.Body>
             <Card.Title>{title}</Card.Title>

@@ -29,12 +29,6 @@ function Header() {
             <Link to={"/cart"} className="text-white nav-link">
               Cart <Badge bg="secondary">{cartProductCount}</Badge>
             </Link>
-            <Link to={"/orders"} className="text-white nav-link">
-              Orders
-            </Link>
-            <Link to={"/account"} className="text-white nav-link">
-              Account
-            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
