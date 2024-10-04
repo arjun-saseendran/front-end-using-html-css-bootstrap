@@ -3,8 +3,12 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import axios from "axios";
 import Col from "react-bootstrap/Col";
+import { useDispatch } from "react-redux";
+import { add } from "../../features/cart/cartSlice";
 
 function ProductCard() {
+  const dispatch = useDispatch();
+
   const [products, setProducts] = useState([]);
   useEffect(() => {
     axios
@@ -17,7 +21,7 @@ function ProductCard() {
     <>
       {products.map((product) => (
         <Col xm={12} sm={6} md={4} xl={3} key={product.id}>
-          <Card className="mt-5">
+          <Card className="mt-5" style={{ background: "#EEEEEE" }}>
             <Card.Img
               variant="top"
               src={product.image}
@@ -30,8 +34,12 @@ function ProductCard() {
               <Card.Text style={{ maxHeight: "78px", overflow: "hidden" }}>
                 {product.description}
               </Card.Text>
-              <Button className="m-2" variant="primary">View Product</Button>
-              <Button variant="primary">Add to cart</Button>
+              <Button className="m-2" variant="dark">
+                View Product
+              </Button>
+              <Button variant="dark" onClick={() => dispatch(add(product))}>
+                Add to cart
+              </Button>
             </Card.Body>
           </Card>
         </Col>
