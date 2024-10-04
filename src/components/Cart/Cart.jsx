@@ -2,11 +2,8 @@ import Table from "react-bootstrap/Table";
 import { useSelector } from "react-redux";
 
 function Cart() {
-    const cartProducts = useSelector((state)=> state.cart.cartProducts)
-    const cartProductCount = useSelector((state) => state.cart.cartProductCount);
+  const cartProducts = useSelector((state) => state.cart.cartProducts);
 
-    console.log(cartProducts);
-    
   return (
     <Table striped bordered hover>
       <thead>
@@ -21,11 +18,11 @@ function Cart() {
       <tbody>
         {cartProducts.map((product) => (
           <tr key={product.id}>
-            <td>{cartProductCount}</td>
+            <td>.</td>
             <td>{product.title}</td>
             <td>{product.description}</td>
             <td>
-              <img src={product.image} height='50px'/>
+              <img src={product.image} height="50px" />
             </td>
             <td>${product.price}</td>
           </tr>
