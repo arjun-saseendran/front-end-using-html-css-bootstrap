@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './index.css'
 import Cart from './components/Cart/Cart.jsx';
 import ViewProduct from './components/ViewProduct/ViewProduct.jsx';
+import Login from './components/Login.jsx';
 
 const router = createBrowserRouter([
   {
@@ -28,8 +29,12 @@ const router = createBrowserRouter([
         element: <Cart />,
       },
       {
+        path: "/login",
+        element: <Login />,
+      },
+      {
         path: "/view-product/:product_id",
-        element: <ViewProduct/>,
+        element: <ViewProduct />,
       },
     ],
   },
